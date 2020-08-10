@@ -8,8 +8,7 @@ setup(name='RewardLearning',
       platforms=["any"],
       license="GPLv3",
       url="https://github.com/Mohtasib/RewardLearning",
-      install_requires=["Keras>=2.0.0",
-                        "yacs>=0.1.6"],
+      install_requires=["Keras>=2.0.0"],
       extras_require={
             # These requires provide different backends available with Keras
             "tensorflow": ["tensorflow"]
