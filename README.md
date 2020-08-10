@@ -1,63 +1,34 @@
 # Reward Learning
 
-This project two Models to learn rewards from real demonstrations, In this project the models receives images as an environment state and classify these images into Success or Non-success completetion of the task in hand. The models were tested on five different robotic manipulation tasks. Furthermore, the models were trained with and without data augmentation. The models are:
+This project contains the implementation of eight different classifier used to learn the rewards of five different robotic manipulation tasks:
 
-### FFN
-This is a FeedForward Network.
-
-### FCN
-This is a Fully Convolutional Network
+| Model | Description |
+|:---:|:---:|
+| `NASNet` | Fully Connected Neural Net that extracts features using NASNet model and feed them to Feed-Forward Network |
+| `FCN` | Fully Convolutional Neural Net |
+| `T-FCN` | Time-Based Fully Convolutional Neural Net |
+| `Attention-RNN` | Attention-Based Encoder-Decoder |
+| `Transformer` | Transformer Network |
+| `DANN` | Domain-Adversarial Neural Network |
+| `ADDA` | Adversarial-Discriminative Domain Adaptation |
+| `T-FCN-ADDA` | Timing-Based and Domain-Based Fully Convolutional Net |
 
 # Dataset
 The dataset of the five different tasks are avaliable in the following links:
 
-[Task1](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/ERCK459EU55EmITx6YCFUjQBQx-CNTQfu_B_HN72vNVIig?e=kFHW3V)
+[Task1](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/ERCK459EU55EmITx6YCFUjQBQx-CNTQfu_B_HN72vNVIig?e=7KBb0z)
 
-[Task2](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EeoT032lyp5Eovv-08TddmQB5G_nxR97CCt3dGfxNfe0PQ?e=agSXAQ)
+[Task2](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EeoT032lyp5Eovv-08TddmQB5G_nxR97CCt3dGfxNfe0PQ?e=vaAlJH)
 
-[Task3](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EZuHO_TvI9tCopMHT7m_LIQBdeckREhz_V5wNK9-ySHGcQ?e=LnwPv4)
+[Task3](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EZuHO_TvI9tCopMHT7m_LIQBdeckREhz_V5wNK9-ySHGcQ?e=yRu8js)
 
-[Task4](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EbPoLtXOfxNAsPdJwPsgersBpvVgYPCtKDGggCj_YJAVwQ?e=yMWhWT)
+[Task4](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EbPoLtXOfxNAsPdJwPsgersBpvVgYPCtKDGggCj_YJAVwQ?e=gROCz4)
 
-[Task5](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EcLU4RJS7nFOkIl1CsBUHXABkhYqqenPcb8xeG7TiLC-mQ?e=pf0JC9)
+[Task5](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EcLU4RJS7nFOkIl1CsBUHXABkhYqqenPcb8xeG7TiLC-mQ?e=ExgV42)
 
 The following link contains the data of the unseen test conditions:
 
-[Unseen Conditions](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/ERzPa0b2jBBJv1Gk7LGtXPEBprnPA4v7X1uNGjanjJvJiA?e=b7jntD)
-
-Note: The _data_ directory structure should look like this:
-```bash
-.
-+-- data
-|     +-- Task1
-|     |    +-- 5Demos 
-|     |    |     +-- Demo1
-|     |    |     +-- Demo2
-|     |    |     +-- Demo3
-|     |    |     +-- Demo4
-|     |    |     +-- Demo5
-|     |    +-- Test 
-|     |          +-- Demo6
-|     |          +-- Demo7
-|     |          +-- Demo8
-|     |          +-- Demo9
-|     |          +-- Demo10
-|     +-- Task2
-|     |    +-- 5Demos 
-|     |    |     +-- Demo1
-|     |    |     +-- Demo2
-|     |    |     +-- Demo3
-|     |    |     +-- Demo4
-|     |    |     +-- Demo5
-|     |    +-- Test 
-|     |          +-- Demo6
-|     |          +-- Demo7
-|     |          +-- Demo8
-|     |          +-- Demo9
-|     |          +-- Demo10
-|     +-- ...
-+-- ...
-```
+[Unseen Conditions](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/ERzPa0b2jBBJv1Gk7LGtXPEBprnPA4v7X1uNGjanjJvJiA?e=CCRghS)
 
 # Installation
 
@@ -67,51 +38,59 @@ pip install -e .
 ```
 
 # Usage
-After selecting the correct config file:
 #### 1. Import Libraries:
 ```bash
-from models.FCN_Classifier import FCN_Classifier
-from models.FFN_Classifier import FFN_Classifier
-from dataset_creator.DatasetCreator import DatasetCreator
-from data_utils.DataAugmentor import DataAugmentor
-from data_utils.ImgEmbed import ImageEmbedding
-from config import cfg
+import numpy as np
+from models.NASNet import NASNet
+from models.FCN import FCN
+from models.T_FCN import T_FCN
+from models.Attention_RNN import Attention_RNN
+from models.Transformer import Transformer
+from models.DANN import DANN
+from models.ADDA import ADDA
+from models.T_FCN_ADDA import T_FCN_ADDA
 ```
 
-#### 2. Generate the Augmented Data:
+#### 2. Define the directories:
 ```bash
-MyDataAugmentor = DataAugmentor(cfg=cfg)
-MyDataAugmentor.Generate()
+My_Model_Logs_DIR = ...
+My_Model_Weights = ...
+Train_Data_Dir = ...
+Test_Data_Dir = ...
+Embed_Model_Weights = ... # This is used in 'Attention_RNN' and 'Transformer' only.
 ```
 
-#### 3. Create the Dataset:
+#### 3. Select the model:
 ```bash
-MyDataCreator = DatasetCreator(cfg=cfg)
-MyDataCreator.CreateTrainDATA()
-MyDataCreator.CreateTestDATA()
+if model is 'NASNet': My_Model = NASNet(Logs_DIR=My_Model_Logs_DIR)
+if model is 'FCN' : My_Model = FCN(Logs_DIR=My_Model_Logs_DIR)
+if model is 'T_FCN' : My_Model = T_FCN(Logs_DIR=My_Model_Logs_DIR)
+if model is 'Attention_RNN' : My_Model = Attention_RNN(Logs_DIR=My_Model_Logs_DIR, embed_model_weights=Embed_Model_Weights)
+if model is 'Transformer' : My_Model = Transformer(Logs_DIR=My_Model_Logs_DIR, embed_model_weights=Embed_Model_Weights)
+if model is 'DANN' : My_Model = DANN(Logs_DIR=My_Model_Logs_DIR)
+if model is 'ADDA' : My_Model = ADDA(Logs_DIR=My_Model_Logs_DIR)
+if model is 'T_FCN_ADDA' : My_Model = T_FCN_ADDA(Logs_DIR=My_Model_Logs_DIR)
 ```
 
-#### 4. Create the model and train it:
+#### 4. Create and load the train and test data:
 ```bash
-MyClassifier = FFN_Classifier(mode="Train", cfg=cfg)
-MyClassifier.epochs = 2
-history = MyClassifier.Train()
-MyClassifier.Plot_Model_History(history)
-MyClassifier.Confusion_Report()
+My_Model.Create_Train_Data(DATADIR=Train_Data_Dir, SAVEDIR=My_Model_Logs_DIR)
+My_Model.Create_Test_Data(DATADIR=Test_Data_Dir, SAVEDIR=My_Model_Logs_DIR)
+
+My_Model.x_train = np.load(My_Model_Logs_DIR + model + '_x_train.npy')
+My_Model.y_train = np.load(My_Model_Logs_DIR + model + '_y_train.npy')
+My_Model.x_test = np.load(My_Model_Logs_DIR + model + '_x_test.npy')
+My_Model.y_test = np.load(My_Model_Logs_DIR + model + '_y_test.npy')
 ```
 
-#### 5. Use the model to predict the label of an image:
+#### 5. Train the model:
 ```bash
-Img = MyClassifier.LoadImg("./sample_data/test.png")
-prediction = MyClassifier.Predict(Img)
-print("Prediction = ", prediction)
+My_Model.Fit()
 ```
 
-#### 6. Use the model to predict the labels of some images:
+#### 6. Evaluate the model:
 ```bash
-Img = MyClassifier.LoadImages(DATA_PATH="./sample_data/")
-prediction = MyClassifier.Predict(Img)
-print("Prediction = ", prediction)
+My_Model.Evaluate()
 ```
 
 
