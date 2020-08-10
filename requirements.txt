@@ -1,5 +1,9 @@
 numpy
 matplotlib
 PIL
-yacs
 keras
+keras_layer_normalization
+keras_multi_head
+keras_position_wise_feed_forward
+keras_pos_embd
+keras_embed_sim
