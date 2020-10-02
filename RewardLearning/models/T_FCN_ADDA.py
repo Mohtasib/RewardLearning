@@ -116,7 +116,7 @@ class T_FCN_ADDA():
         for i in range(0, len(demos)):
             data_dir = os.path.join(DATADIR + demos[i] + "/")
             x_train = np.load(data_dir + "x_data.npy")
-            y_train = np.load(data_dir + "y_data.npy")
+            y_train = np.load(data_dir + "y_data.npy", allow_pickle=True)
             x_dataset.append(x_train)
             y_dataset.append(y_train)
 
