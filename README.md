@@ -16,19 +16,19 @@ This project contains the implementation of eight different classifier used to l
 # Dataset
 The dataset of the five different tasks are avaliable in the following links:
 
-[Task1](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/ERCK459EU55EmITx6YCFUjQB-Pucw-77d2MN4Hw5TS1wkw?e=BfLHUw)
+[Task1](https://drive.google.com/file/d/1QGnRelwz-SI6eyzpQafQ5l_hgTuQFcTq/view?usp=sharing)
 
-[Task2](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EeoT032lyp5Eovv-08TddmQBQ-a2HQZTDHbhovTPBnYpeQ?e=QoBvBf)
+[Task2](https://drive.google.com/file/d/14ZaNH6h4mB-Li6rccq5rLpt5j35EwgRT/view?usp=sharing)
 
-[Task3](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EZuHO_TvI9tCopMHT7m_LIQBthC1KUZ1uTLKpxx7PCTGAQ?e=pqTVMT)
+[Task3](https://drive.google.com/file/d/1t7FcnRMInlV6RUnDt_LfaJqe_ZXPruoO/view?usp=sharing)
 
-[Task4](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EbPoLtXOfxNAsPdJwPsgersBEZs9Mpb96FW2DUuRgXan3Q?e=HQjjxN)
+[Task4](https://drive.google.com/file/d/1O7gzlp0pq_ZD6VFz_NQZ6Ax2vHMPj5bi/view?usp=sharing)
 
-[Task5](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/EcLU4RJS7nFOkIl1CsBUHXABZN8GGEDks4AMfq6S64qo9g?e=5ZtYKC)
+[Task5](https://drive.google.com/file/d/1AoYxtDwVARBroq4m_POeNeEWJDZlZDV2/view?usp=sharing)
 
 The following link contains the data of the unseen test conditions:
 
-[Unseen Conditions](https://universityoflincoln-my.sharepoint.com/:u:/g/personal/17682200_students_lincoln_ac_uk/ERzPa0b2jBBJv1Gk7LGtXPEBcEFCZVtLQEQ6ZpLf6kuJsw?e=KJadfb)
+[Unseen Conditions](https://drive.google.com/file/d/1QLCugRJ9dYy6shlplkDqAgHu9xlAIC_S/view?usp=sharing)
 
 # Installation
 
